@@ -10,4 +10,8 @@ public class productController {
     public String productWelcome(){
         return "welcome to product website";
     }
+    @PostMapping("/add")
+    public String productAdd(){
+        return "welcome to product add page";
+    }
 }
