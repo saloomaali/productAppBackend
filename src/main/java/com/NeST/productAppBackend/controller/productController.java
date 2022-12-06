@@ -1,18 +1,21 @@
 package com.NeST.productAppBackend.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.NeST.productAppBackend.model.Products;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class productController {
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/")
     public String productWelcome(){
         return "welcome to product website";
     }
-    @PostMapping("/add")
-    public String productAdd(){
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/add", consumes = "application/json", produces = "application/json")
+    public String productAdd(@RequestBody Products p){
+
+        System.out.println(p.getPrd_name());
         return "welcome to product add page";
     }
     @PostMapping("/search")
@@ -23,6 +26,7 @@ public class productController {
     public String productEdit(){
         return "welcome to product edit page";
     }
+    @CrossOrigin(origins = "*")
     @GetMapping("/view")
     public String productView(){
         return "welcome to product view page";
