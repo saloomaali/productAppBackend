@@ -18,4 +18,8 @@ public class productController {
     public String productSearch(){
         return "welcome to product search page";
     }
+    @PostMapping("/view")
+    public String productView(){
+        return "welcome to product view page";
+    }
 }
